@@ -2,13 +2,13 @@
 
 //#define GLEW_STATIC
 
-#include <GL/glew.h>
+#include <GL/glew.h>  //todo lo relativo a oprngl
 
-#include <GLFW/glfw3.h>
+#include <GLFW/glfw3.h> // todos los perifericos de entrada y salida
 
-const GLint WIDTH = 800, HEIGHT = 600;
+const GLint WIDTH = 800, HEIGHT = 600; // ancho y alto de la ventana
 
-// Shaders
+// Shaders de vertice
 const GLchar* vertexShaderSource = 
 {
 	"#version 330 core\n"
@@ -18,6 +18,7 @@ const GLchar* vertexShaderSource =
 	"gl_Position = vec4(position.x, position.y, position.z, 1.0);\n"
 	"}\0" 
 };
+// colores y texturas de fragmento
 const GLchar* fragmentShaderSource = 
 {
 	"#version 330 core\n"
@@ -33,7 +34,7 @@ const GLchar* fragmentShaderSource =
 void CrearShader(void);
 
 
-
+//checamos compatibilidad del codigo con el hardware
 
 int main() {
 	glfwInit();
@@ -44,6 +45,8 @@ int main() {
 	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 	glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
 
+
+	
 	GLFWwindow *window = glfwCreateWindow(WIDTH, HEIGHT, "Practica 0", nullptr, nullptr);
 	
 	int screenWidth, screenHeight;
@@ -82,6 +85,7 @@ int main() {
 	CrearShader();
 
 	// Set up vertex data (and buffer(s)) and attribute pointers
+	//X Y Z VERTICES QUE ESTA DIBUJANDO EL TRIANGULO
 	GLfloat vertices[] =
 	{
 		-0.5f, -0.5f, 0.0f, // Left
@@ -110,7 +114,7 @@ int main() {
 	
 	
 
-
+	//Bucle que dibujara todo el tiempo lo que le mandemos
 
 	while (!glfwWindowShouldClose(window))
 	{
@@ -138,6 +142,8 @@ int main() {
 	glfwTerminate();
 	return EXIT_SUCCESS;
 }
+
+//codigo que crea shader
 
 void CrearShader()
 {
