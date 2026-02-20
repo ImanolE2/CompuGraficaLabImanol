@@ -67,8 +67,8 @@ int main() {
 
 	//Orden de los indices donde los queremos exactamente.
 	unsigned int indices[] = {  // note that we start from 0!
-		3,2,0,// second Triangle
-		0,3,2,
+		0,1,2,// second Triangle
+		2,3,0,
 		
 	};
 
@@ -129,7 +129,7 @@ int main() {
         //glDrawArrays(GL_LINE_LOOP,0,4);
         
         //glDrawArrays(GL_TRIANGLES,0,3);
-        glDrawElements(GL_TRIANGLES, 3,GL_UNSIGNED_INT,0);
+        glDrawElements(GL_TRIANGLES, 6,GL_UNSIGNED_INT,0);
 
         
         
