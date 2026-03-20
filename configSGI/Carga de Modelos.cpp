@@ -132,7 +132,7 @@ int main( )
 
         //DRAW EL segundo perro
         model = glm::mat4(1);
-        model = glm::translate(model, glm::vec3(10.0f, 0.0f, 0.0f)); //Con GLM translate  desplazamos al perro 2 unidades en el eje x, se mantuvo el escalado anterior
+        model = glm::translate(model, glm::vec3(10.0f, 0.0f, 0.0f)); //Con GLM translate  desplazamos al perro  unidades en el eje x, se mantuvo el escalado anterior
         model = glm::rotate(model, glm::radians(-45.0f), glm::vec3(0.0f, 1.0f, 0.0f));
         model = glm::scale(model, glm::vec3(5.0f, 5.0f, 5.0f));
         glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
@@ -140,14 +140,15 @@ int main( )
 
         //GATO
         model = glm::mat4(1); //Reiniciamos la matriz
-        model = glm::translate(model, glm::vec3(3.0, 0.0f, 2.0f)); //Desplazamos el modelo 20 unidades en el eje x, para dibujar al segundo  gato
+        model = glm::translate(model, glm::vec3(3.0, 0.0f, 2.0f)); //Desplazamos el modelo  unidades en el eje x, para dibujar al segundo  gato
         model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
         model = glm::scale(model, glm::vec3(0.5f, 0.7f, 0.7f));
         glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
         gato.Draw(shader);//Dibujar modelo del agt
+
         //Segundo gato en el otro perro
         model = glm::mat4(1);
-        model = glm::translate(model, glm::vec3(13.0, 0.0f, 2.0f)); //Desplazamos el modelo 20 unidades en el eje x, para dibujar al segundo  gato
+        model = glm::translate(model, glm::vec3(13.0, 0.0f, 2.0f)); //Desplazamos el modelo unidades en el eje x, para dibujar al segundo  gato
         model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
         model = glm::scale(model, glm::vec3(0.5f, 0.7f,0.7f));
         glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
